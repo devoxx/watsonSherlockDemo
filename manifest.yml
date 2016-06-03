@@ -1,0 +1,15 @@
+declared-services:
+  concept-insights-standard:
+    label: concept_insights
+    plan: standard
+applications:
+- services:
+  - concept-insights-standard
+  name: concept-insights-devoxx
+  command: node app.js
+  path: .
+  instances: 1
+  memory: 256M
+  env:
+    NODE_ENV: production
+    SECURE_EXPRESS: 1

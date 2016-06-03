@@ -1,0 +1,13 @@
+node_modules
+bower_components
+dist
+.DS_Store
+public/css/*
+!public/css/README.md
+public/fonts/icon-fonts/*
+!public/fonts/icon-fonts/README.md
+public/minjs/*
+public/minjs/dist.js
+!public/minjs/README.md
+public/index.html
+concept-insights-nodejs/
