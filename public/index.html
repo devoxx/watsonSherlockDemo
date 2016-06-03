@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Concept Insights</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="images/favicon.ico" />
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+ 
+  <div class="_demo--banner">
+	<div class="_demo--container">
+		<div class="banner--service-icon-container">
+			<img class="banner--service-icon" src="images/concept-insights.svg" alt="Concept Insight Service Demo Icon">
+		</div>
+		<div class="banner--service-info">
+			<h1 class="banner--service-title base--h1">
+				<img class="banner--service-icon_INLINE" src="images/concept-insights.svg" alt="Concept Insight Service Demo Icon">
+				Watson Devoxx / Voxxed
+			</h1>
+			<div class="banner--service-description">
+				Concept Insights allows you to discover content which may or may not be found using a traditional keyword search.
+			</div>
+		</div>
+	</div>
+</div>
+  <div class="_demo--input">
+	<div class="_demo--container">
+		<h2 class="base--h2">
+				Watson Devoxx / Voxxed
+			</h2>
+		<p class="base--p _content--description">
+		  This service uses a pre-existing graph of concepts (based on Wikipedia) to surface the concepts in your input. It will use these concepts to recommend relevant content from the corpus you ingest.
+		</p>
+		<div class="_content--input">
+		  <span class="icon-hyperlink">
+			  <span class="icon icon-reset"></span>
+			  <button class="base--a reset-button" href="" type="reset">
+				Reset
+			  </button>
+		  </span>
+		  <div class="input">
+			<div class="input--form">
+			  <div class="input--tab-panels-container">
+				<div class="tab-panels" role="tabpanel">
+				  <ul class="tab-panels--tab-list" role="tablist">
+					<li class="tab-panels--tab-list-item base-li" role="presentation">
+					  <a class="tab-panels--tab base--a active" href="#concepts-panel" aria-controls="concepts" role="tab">Concepts</a>
+					</li>
+					<li class="tab-panels--tab-list-item base-li" role="presentation">
+					  <a class="tab-panels--tab base--a" href="#text-panel" aria-controls="text" role="tab">Body of Text</a>
+					</li>
+				  </ul>
+				  <div class="tab-panels--tab-content">
+					<div id="concepts-panel" class="tab-panels--tab-pane active" role="tab-panel">
+					  <div class="concept--input-concept-list">
+						<div class="concept">
+						  <div class="concept--new-concept-container active">
+							<span>+</span>
+							<span>add concept</span>
+						  </div>
+						  <div class="concept--input-container">
+							 <input class="concept--input" type="text">
+						  </div>
+						</div>
+					  </div>
+					  <span class="icon-hyperlink">
+						<span class="icon icon-code icon-code-disabled"></span>
+						<button id="label-search-view-code-btn" class="base--a tab-panels--view-code"
+							href="" onclick="show_label_search_response()"
+							type="reset" disabled>
+							View JSON
+					    </button>
+					  </span>
+					</div>
+					<div id="text-panel" class="tab-panels--tab-pane" role="tab-panel">
+					  <a id="sample-1" class="base--a tab-panels--example-link">Example 1</a>
+					  <a id="sample-2" class="base--a tab-panels--example-link">Example 2</a>
+					  <div id="body-of-text" class="concept--abstract-concept-textarea base--textarea" contenteditable="true">
+					  </div>
+					  <div class="concept--abstract-concept-container">
+						<div class="concept--abstract-concept-title">
+						  Top 3 Abstracted Concepts:
+						</div>
+						<div class="concept--abstract-concept-list">
+						</div>
+						<span class="icon-hyperlink">
+							<span class="icon icon-code icon-code-disabled"></span>
+							<button id="text-annotator-view-code-btn" class="base--a tab-panels--view-code" href="" onclick="show_text_annotator_response()" type="reset" disabled>
+						  		View JSON
+							</button>
+						</span>
+					  </div>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+			<div id="concepts-panel-API" class="input--API input--json-container">
+			    <pre class="base--pre API--json language-javascript">
+					<code id="concepts-panel-API-data" class="base--code language-javascript">
+					</code>
+				</pre>
+			</div>
+			<div id="text-panel-API" class="input--API input--json-container">
+			    <pre class="base--pre API--json language-javascript">
+					<code id="text-panel-API-data" class="base--code language-javascript">
+					</code>
+				</pre>
+			</div>
+		  </div>
+		</div>
+		<div class="_content--loading">
+		  <img src="images/loading-indicator.gif" width="100px" alt="">
+		</div>
+	</div>
+</div>
+
+  <div class="_demo--output" style = "display: none;">
+	<div class="_demo--container">
+		<div class="_content--output">
+			<h3 class="base--h3 _content--output-title">
+				Output
+			</h3>
+
+			<p class="base--p _content--output-des">
+				Devoxx and Voxxed content may have explicit concept matches from your input. However, they also have implicit matches, with a single related concept or a collection of concepts. You may be surprised at what you would miss using a traditional keyword search.
+			</p>
+
+			<div class="_content--concept-legend">
+				<div class="concept--your-input-legend">
+				</div>
+				<span class="concept--your-input-label">
+					Your concepts
+				</span>
+				<div class="concept--derived-concept-legend">
+				</div>
+				<span class="concept--derived-concept-label">
+					Devoxx & Voxxed concepts
+				</span>
+			</div>
+
+			<div id="TED-panel-list">
+
+			</div>
+
+		</div>
+		<span class="icon-hyperlink">
+			<span class="icon icon-back2top"></span>
+			<a href="#try-this-service" class="base--a">
+				Back to top
+			</a>
+		</span>
+
+		<div class="_demo--hidden">
+			<div class="concept">
+				<div class="concept--typed-concept-container active">
+					<span class="concept--typed-concept label">
+					</span>
+					<i class="concept--close-icon icon icon-close"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://twitter.github.io/typeahead.js/releases/0.11.1/typeahead.bundle.js"></script>
+  <script type="text/javascript" src="js/vendors/_prism.js"></script>
+  <script type="text/javascript" src="js/citypeahead.js"></script>
+  <script type="text/javascript" src="js/demo.js"></script>
+</body>
+</html>
