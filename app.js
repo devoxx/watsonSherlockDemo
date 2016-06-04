@@ -32,6 +32,10 @@ var credentials = extend({
   version: 'v2'
 }); // VCAP_SERVICES
 
+var alchemyLanguage = watson.alchemy_language({
+  api_key: process.env.API_KEY || '446dc444d593ed09eece2c66476c87c269c37896'
+});
+
 var corpus_id = process.env.CORPUS_ID || '/corpora/eve6tionsto1/devoxx_corpus1';
 var graph_id  = process.env.GRAPH_ID ||  '/graphs/wikipedia/en-20120601';
 
