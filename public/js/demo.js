@@ -237,7 +237,7 @@ function fetch_ted_based_on_concepts() {
 
   $.get('/api/conceptualSearch', {
       ids: concept_array,
-      limit: 3,
+      limit: 7,
       document_fields: JSON.stringify({
         user_fields: 1
       })
