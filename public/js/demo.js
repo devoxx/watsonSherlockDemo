@@ -384,7 +384,7 @@ function generate_TED_panel(TED_data, your_input_concepts) {
 
   var TED_info_below = '<div class="TED--info-below">' + 
   					   		'<a class="TED--title" href="' + TED_data.user_fields.link + '" target="_blank">' + TED_data.label + '</a>' + 
-  					   		'<div class="TED--author">by ' + TED_data.user_fields.author + ', published on ' + TED_data.user_fields.publicationDate + '</div>' + 
+  					   		'<div class="TED--author">by ' + TED_data.user_fields.authors + ', published on ' + TED_data.user_fields.publicationDate + '</div>' + 
   					   		'<div class="TED--author">Document sentiment is ' + TED_data.user_fields.sentiment + ' with ' + TED_data.user_fields.emotions + ' emotions</div>' + 
   					   		'<div class="TED--score">' + '<span class="TED--score-title">' + 'Confidence Score : ' + '</span>' + '<span class="TED--score-value">' + Math.floor(TED_data.score * 100) + '%' + '</span>' + '</div>' + 
   					   	'</div>';
