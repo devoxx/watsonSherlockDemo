@@ -3,9 +3,7 @@ declared-services:
     label: concept_insights
     plan: standard
 applications:
-- services:
-  - concept-insights-standard
-  name: concept-insights-devoxx
+- name: concept-insights-devoxx
   command: node app.js
   path: .
   instances: 1
