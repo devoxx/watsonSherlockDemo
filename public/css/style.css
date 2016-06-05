@@ -1338,6 +1338,7 @@ pre[class*=" language-"] {
 	font-size: 8px;
 	text-align: right;
 	color: black;
+	margin-top: auto;
 }
 
 .TED--score-value {
