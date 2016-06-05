@@ -1334,6 +1334,12 @@ pre[class*=" language-"] {
     .TED--img {
       margin-top: 1rem; } }
 
+.DEVOXX-img {
+	font-size: 8px;
+	text-align: right;
+	color: black;
+}
+
 .TED--score-value {
   font-weight: 500; }
 

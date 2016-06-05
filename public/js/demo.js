@@ -378,7 +378,12 @@ function generate_TED_panel(TED_data, your_input_concepts) {
 
   TED_panel += TED_info_above;
 
-  var TED_thumbnail = '<div class="TED--img">' + '<a class="TED--title" href="' + TED_data.user_fields.link + '" target="_blank"><img src="' + TED_data.user_fields.thumbnail + '" alt=""></a>' + '</div>';
+  var TED_thumbnail = '<div class="TED--img">' + 
+  						'<a class="TED--title" href="' + TED_data.user_fields.link + '" target="_blank">' + 
+  							'<img src="' + TED_data.user_fields.thumbnail + '" alt="' + TED_data.user_fields.thumbnailKeywords + '">' + 
+  							'<div class="DEVOXX-img">' + TED_data.user_fields.thumbnailKeywords + '</div>' +
+  						'</a>' + 
+  					   '</div>';
 
   TED_panel += TED_thumbnail;
 
