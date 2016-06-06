@@ -327,7 +327,7 @@ function getAbstractConcepts() {
 
           $.get('/api/conceptualSearch', {
               ids: concept_array,
-              limit: 3,
+              limit: 7,
               document_fields: JSON.stringify({
                 user_fields: 1
               })
@@ -380,7 +380,7 @@ function generate_TED_panel(TED_data, your_input_concepts) {
 
   var TED_thumbnail = '<div class="TED--img">' + 
   						'<a class="TED--title" href="' + TED_data.user_fields.link + '" target="_blank">' + 
-  							'<img src="' + TED_data.user_fields.thumbnail + '" alt="' + TED_data.user_fields.thumbnailKeywords + '">' + 
+  							'<img src="' + TED_data.user_fields.thumbnail + '" alt="' + TED_data.user_fields.thumbnailKeywords + '">' +
   							'<div class="DEVOXX-img">' + TED_data.user_fields.thumbnailKeywords + '</div>' +
   						'</a>' + 
   					   '</div>';
@@ -416,10 +416,8 @@ function generate_TED_panel(TED_data, your_input_concepts) {
   for (var i = 0; i < 3; i++) {
     if (i == 0) {
       var derived_concept_list_item = '<div class="concept--derived-concept-list-item">' + '<div class="concept--derived-concept active" data-index="' + i + '">' + '<span class="concept--typed-concept">' + TED_data.explanation_tags[i].concept.label + '</span>' + '</div>' + '</div>';
-
     } else {
       var derived_concept_list_item = '<div class="concept--derived-concept-list-item">' + '<div class="concept--derived-concept" data-index="' + i + '">' + '<span class="concept--typed-concept">' + TED_data.explanation_tags[i].concept.label + '</span>' + '</div>' + '</div>';
-
     }
 
     derived_concept_list += derived_concept_list_item;
