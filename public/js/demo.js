@@ -384,14 +384,33 @@ function generate_TED_panel(TED_data, your_input_concepts) {
   							'<div class="DEVOXX-img">' + TED_data.user_fields.thumbnailKeywords + '</div>' +
   						'</a>' + 
   					   '</div>';
+  
+  if (TED_data.user_fields.link.startsWith("https://www.youtube.com/watch?v=")) {
+  	// https://www.youtube.com/v/l1s7R85GF1A
+  	var youTubeLink = TED_data.user_fields.link.replace("watch?v=", "v/");
+  	
+	TED_thumbnail = '<div class="TED--img">' +
+					'<iframe width="458" height="320" src="' + youTubeLink + '" frameborder="0" allowfullscreen></iframe>' +
+					'</div>';
+  }
 
   TED_panel += TED_thumbnail;
 
   var TED_info_below = '<div class="TED--info-below">' + 
   					   		'<a class="TED--title" href="' + TED_data.user_fields.link + '" target="_blank">' + TED_data.label + '</a>' + 
-  					   		'<div class="TED--author">by ' + TED_data.user_fields.authors + ', published on ' + TED_data.user_fields.publicationDate + '</div>' + 
-  					   		'<div class="TED--author">Document sentiment is ' + TED_data.user_fields.sentiment + ' with ' + TED_data.user_fields.emotions + ' emotions</div>' + 
-  					   		'<div class="TED--score">' + '<span class="TED--score-title">' + 'Confidence Score : ' + '</span>' + '<span class="TED--score-value">' + Math.floor(TED_data.score * 100) + '%' + '</span>' + '</div>' + 
+  					   		'<div class="TED--author">by ' + TED_data.user_fields.authors;
+  					   		
+  if (typeof TED_data.user_fields.publicationDate != "undefined") {   					   		
+  	TED_info_below += ', published on ' + TED_data.user_fields.publicationDate;
+  }
+  
+  TED_info_below += '</div>';
+  
+  if (typeof TED_data.user_fields.sentiment != "undefined") {
+	TED_info_below +=  '<div class="TED--author">Document sentiment is ' + TED_data.user_fields.sentiment + ' with ' + TED_data.user_fields.emotions + ' emotions</div>';
+  }
+  
+  TED_info_below += '<div class="TED--score">' + '<span class="TED--score-title">' + 'Confidence Score : ' + '</span>' + '<span class="TED--score-value">' + Math.floor(TED_data.score * 100) + '%' + '</span>' + '</div>' + 
   					   	'</div>';
 
   TED_panel += TED_info_below;
