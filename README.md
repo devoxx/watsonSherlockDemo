@@ -31,9 +31,14 @@ Give it a try! Click the button below to fork into IBM DevOps Services and deplo
   $ cf login -u <your user ID>
   ```
 
-5. Create the Concept Insights service in Bluemix
+5. Create the following five Watson services in Bluemix
+
   ```sh
   $ cf create-service concept_insights standard concept-insights-standard
+  $ cf create-service speech_to_text standard speech-to-text-std
+  $ cf create-service language_translation standard language-translation-std
+  $ cf create-service alchemy_api free alchemy-api-free
+  $ cf create-service watson_vision_combined free watson-vision-free
   ```
 
 6. Push it live!
