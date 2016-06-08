@@ -17,9 +17,7 @@ Give it a try! Click the button below to fork into IBM DevOps Services and deplo
 3. Edit the `manifest.yml` file and change the `<application-name>` to something unique.
   ```none
   applications:
-  - services:
-    - concept-insights-service
-    name: <application-name>
+  - name: <application-name>
     path: .
     memory: 256M
   ```
